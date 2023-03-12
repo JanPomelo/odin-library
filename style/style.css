@@ -1,0 +1,13 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header, footer {
+    background-color:#1a6985;
+    text-align: center;
+    color: white;
+}
+

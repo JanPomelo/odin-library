@@ -1,17 +1,31 @@
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
-header, footer {
-    background-color:#1a6985;
-    text-align: center;
-    color: white;
+header,
+footer {
+	background-color: #2f3d7e;
+	text-align: center;
+	color: white;
 }
 
 #container {
-    display: grid;
-    grid-template-columns: 1fr;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	padding: 30px 50px;
+	gap: 20px;
+	grid-template-rows: 1fr;
+}
+
+.bookDiv {
+	background-color: #faeaeb;
+	border: #2f3d7e solid 2px;
+	border-radius: 1.5rem;
+	padding: 5px 20px;
+    max-height: 200px;
+    box-shadow: 5px 5px 5px #2f3d7e;
 }

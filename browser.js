@@ -24,6 +24,7 @@ function displayBooks() {
     bookDivInfo.innerHTML = book.info();
     bookDiv.appendChild(bookDivInfo);
     container.appendChild(bookDiv);
+    bookDiv.classList.add('bookDiv');
   });
 }
 

@@ -11,3 +11,7 @@ header, footer {
     color: white;
 }
 
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+}

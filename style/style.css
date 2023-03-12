@@ -19,7 +19,7 @@ footer {
 	padding: 30px 50px;
 	row-gap: 30px;
     column-gap: 30px;
-	grid-template-rows: 150px;
+	grid-template-rows: 200px;
 }
 
 .bookDiv {
@@ -27,10 +27,32 @@ footer {
 	border: #2f3d7e solid 2px;
 	border-radius: 1.5rem;
 	padding: 5px 20px;
-    height: 150px;
+    height: 200px;
     box-shadow: 5px 5px 5px #2f3d7e;
     align-self: start;
+    display: grid;
+    gap: 10px;
+    justify-content: start;
 }
+h3, h5,p {
+    margin: 0;
+}
+#read, #notRead {
+    align-self: end;
+    justify-self: end;
+    border-radius: 1rem;
+    text-align: center;
+    width: 4.5rem;
+}
+
+#read {
+    background-color: 	rgba(0,255,127,0.7);
+}
+
+#notRead {
+    background-color: rgba(240,128,128,0.7);
+}
+
 #addDelete {
     grid-column: -2/-1;
     grid-row: 1/-1;

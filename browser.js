@@ -20,9 +20,14 @@ function displayBooks() {
     const bookDiv = document.createElement('div');
     const bookDivTitle = document.createElement('h3');
     const bookDivAuthor = document.createElement('h5');
-    const bookDivInfo = document.createElement('p');
-    bookDivInfo.innerHTML = book.info();
-    bookDiv.appendChild(bookDivInfo);
+    const bookDivPages = document.createElement('p');
+    const bookDivRead = document.createElement('p');
+    bookDivTitle.innerText = book.title;
+    bookDivAuthor.innerText = `by ${book.author}`;
+    bookDivPages.innerText = `Pages: ${book.pages}`;
+    bookDivRead.innerText = book.read;
+    bookDivRead.id = bookDivRead.innerText === 'read' ? 'read' : 'notRead';
+    bookDiv.append(bookDivTitle, bookDivAuthor, bookDivPages, bookDivRead);
     container.appendChild(bookDiv);
     bookDiv.classList.add('bookDiv');
   });

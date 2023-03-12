@@ -4,12 +4,21 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 }
+:root {
+	--header-color: #223843;
+    --second-color: #eff1f3;
+    font-family: 'Poppins', serif;
+}
 
 header,
 footer {
-	background-color: #2f3d7e;
+	background-color: var(--header-color);
 	text-align: center;
 	color: white;
+    padding: 10px;
+}
+h1 {
+    margin: 5px;
 }
 
 #container {
@@ -18,58 +27,72 @@ footer {
 	grid-template-columns: 3fr 1fr;
 	padding: 20px 20px;
 	row-gap: 30px;
-    column-gap: 30px;
+	column-gap: 30px;
 	grid-template-rows: 200px;
 }
 
 .bookDiv {
-	background-color: #faeaeb;
-	border: #2f3d7e solid 2px;
+	background-color: var(--second-color);
+	border: var(--header-color) solid 3px;
 	border-radius: 1.5rem;
 	padding: 5px 20px;
-    height: 200px;
-    box-shadow: 5px 5px 5px #2f3d7e;
-    align-self: start;
-    display: grid;
-    gap: 10px;
-    justify-content: start;
+	height: 200px;
+	box-shadow: 5px 5px 5px var(--header-color);
+	align-self: start;
+	display: grid;
+	gap: 10px;
+	justify-content: start;
 }
-h3, h5,p {
-    margin: 0;
+h3,
+h5,
+p {
+	margin: 0;
 }
-#read, #notRead {
-    align-self: end;
-    justify-self: end;
-    border-radius: 1rem;
-    text-align: center;
-    width: 4.5rem;
+#read,
+#notRead {
+	align-self: end;
+	justify-self: end;
+	border-radius: 1rem;
+	text-align: center;
+	width: 5rem;
 }
 
 #read {
-    background-color: 	rgba(0,255,127,0.7);
+	background-color: rgba(0, 255, 127, 0.7);
 }
 
 #notRead {
-    background-color: rgba(240,128,128,0.7);
+	background-color: rgba(240, 128, 128, 0.7);
 }
 
 #addDelete {
-    grid-column: -2/-1;
-    grid-row: 1/-1;
+	grid-column: -2/-1;
+	grid-row: 1/-1;
 }
 
 #addBook {
-    border-radius: 1rem;
-    width: 6rem;
-    background-color: #2f3d7e;
-    color: white;
-    height: 1.6rem;
-    border: none;
-    box-shadow: 5px 5px 5px #faeaeb;
+	border-radius: 1rem;
+	width: 6rem;
+	background-color: var(--header-color);
+	color: white;
+	height: 1.6rem;
+	border: none;
+	box-shadow: 5px 5px 5px var(--second-color);
+}
+
+#addBook:hover, #addBook:focus {
+    box-shadow: none;
+    filter: drop-shadow(2px 2px 2px grey);
+}
+
+#addBook:active {
+    border: #223890 3px inset;
+    box-shadow: none;
+    filter: drop-shadow(5px 5px 5px grey);
 }
 
 @media screen and (min-width: 950px) {
-    #container {
-        grid-template-columns: 2fr 2fr 2fr 1fr;
-    }
+	#container {
+		grid-template-columns: 2fr 2fr 2fr 1fr;
+	}
 }

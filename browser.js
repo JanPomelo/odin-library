@@ -28,10 +28,10 @@ function displayBooks() {
   });
 }
 
-const book1 = new Book('Harry Potter und der Stein der Weisen', 'J.K. Rowling', 248, 'read');
+const book1 = new Book('Harry Potter and the Philosophers Stone', 'J.K. Rowling', 248, 'read');
 
 const book2 = new Book(
-  'Harry Potter und die Kammer des Schreckens',
+  'Harry Potter and the Chamber of Secrets',
   'J.K. Rowling',
   251,
   'not read',

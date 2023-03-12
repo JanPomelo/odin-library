@@ -14,8 +14,27 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+function displayBooks() {
+  const container = document.getElementById('container');
+  myLibrary.forEach((book) => {
+    const bookDiv = document.createElement('div');
+    const bookDivTitle = document.createElement('h3');
+    const bookDivAuthor = document.createElement('h5');
+    const bookDivInfo = document.createElement('p');
+    bookDivInfo.innerHTML = book.info();
+    bookDiv.appendChild(bookDivInfo);
+    container.appendChild(bookDiv);
+  });
+}
+
 const book1 = new Book('Harry Potter und der Stein der Weisen', 'J.K. Rowling', 248, 'read');
 
+const book2 = new Book(
+  'Harry Potter und die Kammer des Schreckens',
+  'J.K. Rowling',
+  251,
+  'not read',
+);
 addBookToLibrary(book1);
-console.log(myLibrary);
-console.log(book1.info());
+addBookToLibrary(book2);
+displayBooks();

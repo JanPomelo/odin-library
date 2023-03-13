@@ -33,6 +33,14 @@ function displayBooks() {
   });
 }
 
+const addButton = document.getElementById('addBook');
+addButton.addEventListener('click', makeFormVisible);
+const form = document.getElementById('addBookForm');
+
+function makeFormVisible() {
+  form.classList = ['visible'];
+}
+
 const book1 = new Book('Harry Potter and the Philosophers Stone', 'J.K. Rowling', 248, 'read');
 
 const book2 = new Book(

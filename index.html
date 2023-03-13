@@ -4,7 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+			rel="stylesheet"
+		/>
 		<link rel="stylesheet" href="./style/normalize.css" />
 		<link rel="stylesheet" href="./style/style.css" />
 		<title>Jan's Library</title>
@@ -17,6 +20,25 @@
 			<div id="addDelete">
 				<button id="addBook">Add Book</button>
 			</div>
+			<form action="submit" id="addBookForm" class="invis">
+				<div>
+					<label for="bookName">Book Title</label>
+					<input type="text" id="bookName" required />
+				</div>
+        <div>
+					<label for="bookAuthor">Author</label>
+					<input type="text" id="bookName" required />
+				</div>
+        <div>
+					<label for="bookPages">Pages</label>
+					<input type="text" id="bookName" required />
+				</div>
+        <div>
+          <label for="bookRead">Read yet</label>
+          <input type="checkbox">
+        </div>
+        <button id="finishForm" type="submit">Add</button>
+			</form>
 		</div>
 		<footer>
 			<p>A Project done for "The Odin Project" in 2023</p>

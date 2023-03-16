@@ -17,6 +17,7 @@
 			<h1>Jan's Library</h1>
 		</header>
 		<div id="container">
+			<div id="bookContainer"></div>
 			<div id="addDelete">
 				<button id="addBook">Add Book</button>
 			</div>
@@ -25,19 +26,26 @@
 					<label for="bookName">Book Title</label>
 					<input type="text" id="bookName" required />
 				</div>
-        <div>
+				<div>
 					<label for="bookAuthor">Author</label>
-					<input type="text" id="bookName" required />
+					<input type="text" id="bookAuthor" required />
 				</div>
-        <div>
+				<div>
 					<label for="bookPages">Pages</label>
-					<input type="text" id="bookName" required />
+					<input type="text" id="bookPages" required />
 				</div>
-        <div>
-          <label for="bookRead">Read yet</label>
-          <input type="checkbox">
-        </div>
-        <button id="finishForm" type="submit">Add</button>
+				<div>
+					<label for="bookRead">Read</label>
+					<input type="radio" id="bookRead" name="readCheck" value="read" />
+					<label for="bookNotRead">Not Read</label>
+					<input
+						type="radio"
+						id="bookNotRead"
+						name="readCheck"
+						value="not read"
+					/>
+				</div>
+				<button id="finishForm" type="submit">Add</button>
 			</form>
 		</div>
 		<footer>

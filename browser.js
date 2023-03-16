@@ -14,8 +14,9 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+const bookContainer = document.getElementById('bookContainer');
+
 function displayBooks() {
-  const container = document.getElementById('container');
   myLibrary.forEach((book) => {
     const bookDiv = document.createElement('div');
     const bookDivTitle = document.createElement('h3');
@@ -28,18 +29,35 @@ function displayBooks() {
     bookDivRead.innerText = book.read;
     bookDivRead.id = bookDivRead.innerText === 'read' ? 'read' : 'notRead';
     bookDiv.append(bookDivTitle, bookDivAuthor, bookDivPages, bookDivRead);
-    container.appendChild(bookDiv);
+    bookContainer.appendChild(bookDiv);
     bookDiv.classList.add('bookDiv');
   });
 }
 
-const addButton = document.getElementById('addBook');
-addButton.addEventListener('click', makeFormVisible);
 const form = document.getElementById('addBookForm');
+const addButton = document.getElementById('addBook');
+const finishForm = document.getElementById('finishForm');
 
 function makeFormVisible() {
   form.classList = ['visible'];
 }
+
+function clearContainer() {
+  const allBookDivs = Array.from(document.getElementsByClassName('bookDiv'));
+  allBookDivs.forEach((book) => { book.remove(); });
+}
+
+function dontSendForm(event) {
+  // eslint-disable-next-line max-len
+  addBookToLibrary(new Book(form.bookName.value, form.bookAuthor.value, form.bookPages.value, form.readCheck.value));
+  clearContainer();
+  displayBooks();
+  form.classList = ['invis'];
+  event.preventDefault();
+}
+
+addButton.addEventListener('click', makeFormVisible);
+finishForm.addEventListener('click', dontSendForm, false);
 
 const book1 = new Book('Harry Potter and the Philosophers Stone', 'J.K. Rowling', 248, 'read');
 

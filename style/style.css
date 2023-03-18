@@ -1,5 +1,6 @@
 body {
 	height: 100vh;
+    width: 100vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -17,6 +18,19 @@ footer {
 	color: white;
 	padding: 10px;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+}
+
 h1 {
 	margin: 5px;
 }
@@ -26,8 +40,9 @@ h1 {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	padding: 20px 20px;
-	column-gap: 30px;
+	column-gap: 20px;
 	margin-bottom: 20px;
+    margin-top: 60px;
 }
 
 #bookContainer {
@@ -36,6 +51,7 @@ h1 {
 	grid-auto-rows: 200px;
 	row-gap: 30px;
 	column-gap: 30px;
+    margin-bottom: 70px;
 }
 
 .bookDiv {
@@ -74,6 +90,7 @@ p {
 #addDelete {
 	grid-column: -2/-1;
 	grid-row: 1/-1;
+    position: relative;
 }
 
 #addBook {
@@ -81,9 +98,10 @@ p {
 	width: 6rem;
 	background-color: var(--header-color);
 	color: white;
-	height: 1.6rem;
+	height: 3.2rem;
 	border: none;
 	box-shadow: 5px 5px 5px var(--second-color);
+    position: fixed;
 }
 
 #addBook:hover,
@@ -109,6 +127,13 @@ p {
 #addBookForm {
 	position: absolute;
 	background-color: white;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	width: 200px;
+	height: 300px;
 }
 
 @media screen and (min-width: 950px) {
@@ -117,5 +142,8 @@ p {
 	}
 	#bookContainer {
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+	#addButton {
+		height: 1.6rem;
 	}
 }

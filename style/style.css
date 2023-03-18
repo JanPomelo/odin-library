@@ -102,6 +102,8 @@ p {
 	border: none;
 	box-shadow: 5px 5px 5px var(--second-color);
     position: fixed;
+    left: auto;
+    right: auto;
 }
 
 #addBook:hover,
@@ -124,6 +126,10 @@ p {
 	visibility: visible;
 }
 
+.blurred {
+    filter: blur(10px);
+}
+ 
 #addBookForm {
 	position: absolute;
 	background-color: white;

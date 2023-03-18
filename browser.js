@@ -38,7 +38,21 @@ const form = document.getElementById('addBookForm');
 const addButton = document.getElementById('addBook');
 const finishForm = document.getElementById('finishForm');
 
+const addDelete = document.getElementById('addDelete');
+
+function makeAllBlurred() {
+  bookContainer.classList = ['blurred'];
+  addDelete.classList = ['blurred'];
+}
+
+function makeAllUnBlurred() {
+  bookContainer.classList = [''];
+  addDelete.classList = [''];
+}
+
 function makeFormVisible() {
+  makeAllBlurred();
+  addButton.disabled = true;
   form.classList = ['visible'];
 }
 
@@ -52,8 +66,10 @@ function dontSendForm(event) {
   addBookToLibrary(new Book(form.bookName.value, form.bookAuthor.value, form.bookPages.value, form.readCheck.value));
   clearContainer();
   displayBooks();
+  makeAllUnBlurred();
   form.classList = ['invis'];
   event.preventDefault();
+  addButton.disabled = false;
 }
 
 addButton.addEventListener('click', makeFormVisible);

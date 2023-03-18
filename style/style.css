@@ -1,6 +1,6 @@
 body {
 	height: 100vh;
-    width: 100vw;
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -20,15 +20,15 @@ footer {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.8rem;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	font-size: 0.8rem;
 }
 
 header {
-    position: fixed;
-    width: 100%;
+	position: fixed;
+	width: 100%;
 }
 
 h1 {
@@ -42,7 +42,7 @@ h1 {
 	padding: 20px 20px;
 	column-gap: 20px;
 	margin-bottom: 20px;
-    margin-top: 60px;
+	margin-top: 60px;
 }
 
 #bookContainer {
@@ -51,7 +51,7 @@ h1 {
 	grid-auto-rows: 200px;
 	row-gap: 30px;
 	column-gap: 30px;
-    margin-bottom: 70px;
+	margin-bottom: 70px;
 }
 
 .bookDiv {
@@ -90,7 +90,7 @@ p {
 #addDelete {
 	grid-column: -2/-1;
 	grid-row: 1/-1;
-    position: relative;
+	position: relative;
 }
 
 #addBook {
@@ -101,9 +101,9 @@ p {
 	height: 3.2rem;
 	border: none;
 	box-shadow: 5px 5px 5px var(--second-color);
-    position: fixed;
-    left: auto;
-    right: auto;
+	position: fixed;
+	left: auto;
+	right: auto;
 }
 
 #addBook:hover,
@@ -127,10 +127,9 @@ p {
 }
 
 .blurred {
-    filter: blur(10px);
+	filter: blur(10px);
 }
 
- 
 #addBookForm {
 	position: absolute;
 	background-color: white;
@@ -140,14 +139,44 @@ p {
 	bottom: 0;
 	margin: auto;
 	width: 200px;
-	height: 300px;
-    border-radius: 1rem;
-    border: var(--header-color) 4px solid;
-    box-shadow: 6px 6px 4px grey;
-    padding: 5px;
-
+	height: 220px;
+	border-radius: 1rem;
+	border: var(--header-color) 4px solid;
+	box-shadow: 6px 6px 4px grey;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 30px 5px;
 }
 
+#addBookForm > div {
+	display: flex;
+	flex-direction: column;
+	padding: 0 10px;
+}
+label {
+	color: var(--header-color);
+}
+
+#addBookForm > div:nth-of-type(4) {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#addBookForm > button {
+	align-self: center;
+}
+
+#finishForm {
+	background-color: var(--header-color);
+	color: white;
+	height: 1.6rem;
+	width: 5rem;
+	border-radius: 1rem;
+	border: solid;
+}
 
 @media screen and (min-width: 950px) {
 	#container {
@@ -158,6 +187,6 @@ p {
 	}
 	#addBook {
 		height: 1.6rem;
-        width: 6rem;
+		width: 6rem;
 	}
 }

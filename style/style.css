@@ -95,7 +95,7 @@ p {
 
 #addBook {
 	border-radius: 1rem;
-	width: 6rem;
+	width: 4.5rem;
 	background-color: var(--header-color);
 	color: white;
 	height: 3.2rem;
@@ -129,6 +129,7 @@ p {
 .blurred {
     filter: blur(10px);
 }
+
  
 #addBookForm {
 	position: absolute;
@@ -140,7 +141,13 @@ p {
 	margin: auto;
 	width: 200px;
 	height: 300px;
+    border-radius: 1rem;
+    border: var(--header-color) 4px solid;
+    box-shadow: 6px 6px 4px grey;
+    padding: 5px;
+
 }
+
 
 @media screen and (min-width: 950px) {
 	#container {
@@ -149,7 +156,8 @@ p {
 	#bookContainer {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
-	#addButton {
+	#addBook {
 		height: 1.6rem;
+        width: 6rem;
 	}
 }

@@ -151,12 +151,27 @@ p {
 }
 
 #addBookForm > div {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 	padding: 0 10px;
+	position: relative;
+    gap: 0px;
+    align-items: center;
+}
+.inpRight, .inpWrong {
+    font-size: 0.8rem;
+    background-color: var(--header-color);
+    color: var(--second-color);
+    text-align: center;
+}
+
+.inpRight {
+    visibility: hidden;
 }
 label {
 	color: var(--header-color);
+    grid-row: 1/2;
 }
 
 #addBookForm > div:nth-of-type(4) {
@@ -169,6 +184,10 @@ label {
 	align-self: center;
 }
 
+#inpRight {
+    grid-column: 2/-1;
+    grid-row: 1/2;
+}
 #finishForm {
 	background-color: var(--header-color);
 	color: white;
@@ -176,6 +195,36 @@ label {
 	width: 5rem;
 	border-radius: 1rem;
 	border: solid;
+}
+
+input[type='text'] {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+	border: 2px solid var(--header-color);
+	border-radius: 0.5rem;
+	height: 1.2rem;
+	padding-left: 8px;
+	font-size: 0.9rem;
+}
+
+input[type='text']:focus,
+input[type='text']:active {
+	outline: none;
+	background-color: none;
+	border: 3px solid var(--header-color);
+}
+input[type='text']:required:invalid:focus {
+	background-color: rgba(250, 160, 160, 0.2);
+}
+
+input[type='text']:required:valid:focus {
+	background-color: rgba(193, 225, 193, 0.2);
+}
+input[type='text']::after {
+	content: 'The Pages Input needs to contain either nothing, or just numbers.';
+	width: 40px;
+	height: 40px;
+	background-color: aqua;
 }
 
 @media screen and (min-width: 950px) {

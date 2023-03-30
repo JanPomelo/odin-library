@@ -114,6 +114,17 @@ infoPages.addEventListener('mouseleave', () => {
   infoPagesSpan.style.visibility = 'hidden';
 });
 
+const infoTitle = document.getElementById('infoTitle');
+
+const infoTitleSpan = document.getElementById('infoTitleSpan');
+
+infoTitle.addEventListener('mouseover', () => {
+  infoTitleSpan.style.visibility = 'visible';
+});
+
+infoTitle.addEventListener('mouseleave', () => {
+  infoTitleSpan.style.visibility = 'hidden';
+});
 // function to check the form before submitting
 function checkForm() {
   let allRight = true;

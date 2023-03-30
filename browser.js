@@ -62,6 +62,7 @@ function makeAllUnBlurred() {
 function makeFormVisible() {
   makeAllBlurred();
   addButton.disabled = true;
+  form.bookName.value = '';
   form.classList = ['visible'];
 }
 
@@ -83,7 +84,23 @@ function checkPages() {
   return false;
 }
 
-const infoClass = document.getElementsByClassName('inpRight');
+// function to check the title input (need to contain at least 1 character)
+function checkTitle() {
+  if (form.bookName.value === '') {
+    return false;
+  }
+  return true;
+}
+// function to check the author input and write unknown if something is missing
+function checkAuthor() {
+  if (form.bookAuthor.value === '') {
+    form.bookAuthor.value = 'unknown Author';
+  }
+}
+
+const inpRightName = document.getElementById('inpRightName');
+
+const inpRightPages = document.getElementById('inpRightPages');
 
 const infoPages = document.getElementById('infoPages');
 
@@ -99,12 +116,26 @@ infoPages.addEventListener('mouseleave', () => {
 
 // function to check the form before submitting
 function checkForm() {
+  let allRight = true;
   if (!checkPages()) {
-    infoClass[2].classList = ['inpWrong'];
-    return false;
+    inpRightPages.classList = ['inpWrong'];
+    allRight = false;
+  } else {
+    inpRightPages.classList = ['inpRight'];
   }
-  infoClass[2].classList = ['inpRight'];
-  return true;
+  if (!checkTitle()) {
+    inpRightName.classList = ['inpWrong'];
+    allRight = false;
+  } else {
+    inpRightName.classList = ['inpRight'];
+  }
+  if (allRight) {
+    inpRightPages.classList = ['inpRight'];
+    inpRightName.classList = ['inpRight'];
+    checkAuthor();
+    return true;
+  }
+  return false;
 }
 
 // function to surpress the form sending and call the necessary forms to add the new book
@@ -125,7 +156,14 @@ function dontSendForm(event) {
     form.classList = ['invis'];
     addButton.disabled = false;
   }
+  if (form.bookPages.value === 'unknown') {
+    form.bookPages.value = '';
+  }
+  if (form.bookAuthor.value === 'unknown Author') {
+    form.bookAuthor.value = '';
+  }
   event.preventDefault();
+  return false;
 }
 
 addButton.addEventListener('click', makeFormVisible);

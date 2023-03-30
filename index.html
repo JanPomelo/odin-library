@@ -21,21 +21,31 @@
 			<div id="addDelete">
 				<button id="addBook">Add Book</button>
 			</div>
-			<form action="submit" id="addBookForm" class="invis">
+			<form
+				action="submit"
+				id="addBookForm"
+				class="invis"
+				onsubmit="return false"
+			>
 				<div>
 					<label for="bookName">Book Title</label>
-					<input type="text" id="bookName" required />
-					<div class="inpRight">Invalid Input</div>
+					<input type="text" id="bookName" />
+					<div class="inpRight" id="inpRightName">
+						<div>Invalid Input</div>
+						<div class="info" id="infoTitle">i</div>
+						<span id="infoTitleSpan"
+							>Please write at least one character in this field.</span
+						>
+					</div>
 				</div>
 				<div>
 					<label for="bookAuthor">Author</label>
 					<input type="text" id="bookAuthor" placeholder="unknown" />
-					<div class="inpRight">Invalid Input</div>
 				</div>
 				<div>
 					<label for="bookPages">Pages</label>
 					<input type="text" id="bookPages" placeholder="-" />
-					<div class="inpRight">
+					<div class="inpRight" id="inpRightPages">
 						<div>Invalid Input</div>
 						<div class="info" id="infoPages">i</div>
 						<span id="infoPagesSpan"

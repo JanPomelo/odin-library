@@ -83,11 +83,27 @@ function checkPages() {
   return false;
 }
 
+const infoClass = document.getElementsByClassName('inpRight');
+
+const infoPages = document.getElementById('infoPages');
+
+const infoPagesSpan = document.getElementById('infoPagesSpan');
+
+infoPages.addEventListener('mouseover', () => {
+  infoPagesSpan.style.visibility = 'visible';
+});
+
+infoPages.addEventListener('mouseleave', () => {
+  infoPagesSpan.style.visibility = 'hidden';
+});
+
 // function to check the form before submitting
 function checkForm() {
   if (!checkPages()) {
+    infoClass[2].classList = ['inpWrong'];
     return false;
   }
+  infoClass[2].classList = ['inpRight'];
   return true;
 }
 

@@ -25,17 +25,23 @@
 				<div>
 					<label for="bookName">Book Title</label>
 					<input type="text" id="bookName" required />
-          <div class="inpRight">Invalid Input</div>
+					<div class="inpRight">Invalid Input</div>
 				</div>
 				<div>
 					<label for="bookAuthor">Author</label>
 					<input type="text" id="bookAuthor" placeholder="unknown" />
-          <div class="inpRight">Invalid Input</div>
+					<div class="inpRight">Invalid Input</div>
 				</div>
 				<div>
 					<label for="bookPages">Pages</label>
 					<input type="text" id="bookPages" placeholder="-" />
-          <div class="inpRight">Invalid Input</div>
+					<div class="inpRight">
+						<div>Invalid Input</div>
+						<div class="info" id="infoPages">i</div>
+						<span id="infoPagesSpan"
+							>Please write a number in this field or let it empty.</span
+						>
+					</div>
 				</div>
 				<div>
 					<label for="bookRead">Read</label>
@@ -46,6 +52,7 @@
 						id="bookNotRead"
 						name="readCheck"
 						value="not read"
+						checked="checked"
 					/>
 				</div>
 				<button id="finishForm" type="submit">Add</button>

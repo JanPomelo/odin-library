@@ -21,18 +21,27 @@ const bookContainer = document.getElementById('bookContainer');
 
 // function to display the books in the book Container
 function displayBooks() {
-  myLibrary.forEach((book) => {
+  myLibrary.forEach((book, index, object) => {
     const bookDiv = document.createElement('div');
+    const bookDeleteBut = document.createElement('button');
+    const bookDeleteButSpan = document.createElement('span');
     const bookDivTitle = document.createElement('h3');
     const bookDivAuthor = document.createElement('h5');
     const bookDivPages = document.createElement('p');
     const bookDivRead = document.createElement('p');
+    bookDeleteButSpan.innerText = 'x';
+    bookDeleteBut.classList = ['bookDeleteButtons'];
+    bookDeleteBut.addEventListener('click', () => {
+      bookDiv.remove();
+      object.splice(index, 1);
+    });
+    bookDeleteBut.appendChild(bookDeleteButSpan);
     bookDivTitle.innerText = book.title;
     bookDivAuthor.innerText = `by ${book.author}`;
     bookDivPages.innerText = `Pages: ${book.pages}`;
     bookDivRead.innerText = book.read;
     bookDivRead.id = bookDivRead.innerText === 'read' ? 'read' : 'notRead';
-    bookDiv.append(bookDivTitle, bookDivAuthor, bookDivPages, bookDivRead);
+    bookDiv.append(bookDeleteBut, bookDivTitle, bookDivAuthor, bookDivPages, bookDivRead);
     bookContainer.appendChild(bookDiv);
     bookDiv.classList.add('bookDiv');
   });

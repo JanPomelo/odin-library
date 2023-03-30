@@ -64,6 +64,7 @@ h1 {
 	align-self: start;
 	display: grid;
 	gap: 10px;
+	position: relative;
 }
 h3,
 h5,
@@ -150,23 +151,24 @@ p {
 	padding: 30px 5px;
 }
 
-#closeForm {
-    position: absolute;
-    right: 5px;
-    top: 5px;
-    background-color: red;
-    border: none;
-    border-radius: 50%;
-    color: var(--second-color);
-    height: 1rem;
-    width: 1rem;
-    box-shadow: 2px 2px 1px grey;
+#closeForm,
+.bookDeleteButtons {
+	position: absolute;
+	right: 8px;
+	top: 7px;
+	background-color: rgba(240, 128, 128, 0.7);
+	border: none;
+	border-radius: 50%;
+	height: 1rem;
+	width: 1rem;
+	box-shadow: 2px 2px 1px grey;
 }
 
-#closeForm > span {
-    position: absolute;
-    right: 4px;
-    top: -2px;
+#closeForm > span,
+.bookDeleteButtons > span {
+	position: absolute;
+	right: 4px;
+	top: -2px;
 }
 
 #addBookForm > div {
@@ -210,7 +212,8 @@ p {
 	width: 0.7rem;
 }
 
-#infoPagesSpan, #infoTitleSpan {
+#infoPagesSpan,
+#infoTitleSpan {
 	position: absolute;
 	right: -100px;
 	left: 110px;

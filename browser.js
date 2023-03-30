@@ -176,9 +176,24 @@ function dontSendForm(event) {
   event.preventDefault();
   return false;
 }
+// function to just close the form and don't safe anything
+function closeFormFunction() {
+  makeAllUnBlurred();
+  form.classList = ['invis'];
+  addButton.disabled = false;
+  if (form.bookPages.value === 'unknown') {
+    form.bookPages.value = '';
+  }
+  if (form.bookAuthor.value === 'unknown Author') {
+    form.bookAuthor.value = '';
+  }
+}
 
 addButton.addEventListener('click', makeFormVisible);
 finishForm.addEventListener('click', dontSendForm, false);
+
+const closeForm = document.getElementById('closeForm');
+closeForm.addEventListener('click', closeFormFunction);
 
 const book1 = new Book('Harry Potter and the Philosophers Stone', 'J.K. Rowling', 248, 'read');
 

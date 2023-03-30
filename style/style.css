@@ -150,6 +150,25 @@ p {
 	padding: 30px 5px;
 }
 
+#closeForm {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    color: var(--second-color);
+    height: 1rem;
+    width: 1rem;
+    box-shadow: 2px 2px 1px grey;
+}
+
+#closeForm > span {
+    position: absolute;
+    right: 4px;
+    top: -2px;
+}
+
 #addBookForm > div {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

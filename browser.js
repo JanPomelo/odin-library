@@ -40,7 +40,8 @@ function displayBooks() {
     bookDivAuthor.innerText = `by ${book.author}`;
     bookDivPages.innerText = `Pages: ${book.pages}`;
     bookDivRead.innerText = book.read;
-    bookDivRead.id = bookDivRead.innerText === 'read' ? 'read' : 'notRead';
+    // eslint-disable-next-line no-nested-ternary
+    bookDivRead.id = bookDivRead.innerText === 'read' ? 'read' : bookDivRead.innerText === 'not read' ? 'notRead' : 'reading';
     bookDiv.append(bookDeleteBut, bookDivTitle, bookDivAuthor, bookDivPages, bookDivRead);
     bookContainer.appendChild(bookDiv);
     bookDiv.classList.add('bookDiv');

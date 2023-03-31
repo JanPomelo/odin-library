@@ -77,12 +77,13 @@ p {
 	margin-right: 20px;
 }
 #read,
-#notRead {
+#notRead,
+#reading {
 	align-self: end;
 	justify-self: end;
 	border-radius: 1rem;
 	text-align: center;
-	width: 5rem;
+	width: 6rem;
 }
 
 #read {
@@ -91,6 +92,10 @@ p {
 
 #notRead {
 	background-color: rgba(240, 128, 128, 0.7);
+}
+
+#reading {
+	background-color: rgba(253, 253, 150, 0.7);
 }
 
 #addDelete {
@@ -241,10 +246,19 @@ label {
 }
 
 #addBookForm > div:nth-of-type(4) {
+	margin-top: 10px;
+	margin-bottom: 10px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	height: 1.6rem;
+}
+
+img {
+	width: auto;
+	height: 1.6rem;
+	zoom: 1.5;
 }
 
 #addBookForm > button {

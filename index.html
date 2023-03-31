@@ -27,7 +27,7 @@
 				class="invis"
 				onsubmit="return false"
 			>
-      <button id="closeForm"><span>x</span></button>
+				<button id="closeForm"><span>x</span></button>
 				<div>
 					<label for="bookName">Book Title</label>
 					<input type="text" id="bookName" />
@@ -55,9 +55,23 @@
 					</div>
 				</div>
 				<div>
-					<label for="bookRead">Read</label>
+					<label for="bookRead">
+						<img src="./img/read.png" alt="ticked Book" />
+					</label>
 					<input type="radio" id="bookRead" name="readCheck" value="read" />
-					<label for="bookNotRead">Not Read</label>
+					<label for="bookReading">
+						<img src="./img/reading.png" alt="open Book" />
+					</label>
+					<input
+						type="radio"
+						id="bookReading"
+						name="readCheck"
+						value="reading..."
+					/>
+
+					<label for="bookNotRead">
+						<img src="./img/notRead.png" alt="crossed Book" />
+					</label>
 					<input
 						type="radio"
 						id="bookNotRead"

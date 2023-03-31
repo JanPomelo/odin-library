@@ -71,6 +71,10 @@ h5,
 p {
 	margin: 0;
 }
+
+.bookDiv > h3 {
+	margin-right: 20px;
+}
 #read,
 #notRead {
 	align-self: end;
@@ -159,9 +163,15 @@ p {
 	background-color: rgba(240, 128, 128, 0.7);
 	border: none;
 	border-radius: 50%;
-	height: 1rem;
-	width: 1rem;
+	height: 16px;
+	width: 16px;
 	box-shadow: 2px 2px 1px grey;
+	color: black;
+}
+
+#closeForm:hover, .bookDeleteButtons:hover {
+    	background-color: rgba(250, 1, 128, 1);
+
 }
 
 #closeForm > span,

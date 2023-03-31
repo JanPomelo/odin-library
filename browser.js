@@ -124,6 +124,39 @@ infoPages.addEventListener('mouseleave', () => {
   infoPagesSpan.style.visibility = 'hidden';
 });
 
+const readImg = document.getElementById('readImg');
+const readSpan = document.getElementById('readSpan');
+
+const readingImg = document.getElementById('readingImg');
+const readingSpan = document.getElementById('readingSpan');
+
+const notReadImg = document.getElementById('notReadImg');
+const notReadSpan = document.getElementById('notReadSpan');
+
+readImg.addEventListener('mouseover', () => {
+  readSpan.style.visibility = 'visible';
+});
+
+readImg.addEventListener('mouseleave', () => {
+  readSpan.style.visibility = 'hidden';
+});
+
+notReadImg.addEventListener('mouseover', () => {
+  notReadSpan.style.visibility = 'visible';
+});
+
+notReadImg.addEventListener('mouseleave', () => {
+  notReadSpan.style.visibility = 'hidden';
+});
+
+readingImg.addEventListener('mouseover', () => {
+  readingSpan.style.visibility = 'visible';
+});
+
+readingImg.addEventListener('mouseleave', () => {
+  readingSpan.style.visibility = 'hidden';
+});
+
 const infoTitle = document.getElementById('infoTitle');
 
 const infoTitleSpan = document.getElementById('infoTitleSpan');

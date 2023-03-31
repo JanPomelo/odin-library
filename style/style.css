@@ -230,14 +230,23 @@ p {
 }
 
 #infoPagesSpan,
-#infoTitleSpan {
+#infoTitleSpan,
+.infoRadioButtonSpan {
 	position: absolute;
 	right: -100px;
 	left: 110px;
 	background-color: var(--header-color);
 	padding: 3px;
 	border-radius: 1rem;
-	visibility: hidden;
+    visibility: hidden;
+    color: var(--second-color);
+    text-align: center;
+}
+
+.infoRadioButtonSpan {
+    right: -110px;
+	left: 215px;
+    padding: 2px 8px;
 }
 
 label {
@@ -253,6 +262,7 @@ label {
 	justify-content: space-between;
 	align-items: center;
 	height: 1.6rem;
+	position: relative;
 }
 
 img {

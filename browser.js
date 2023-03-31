@@ -28,7 +28,10 @@ function displayBooks() {
     const bookDivTitle = document.createElement('h3');
     const bookDivAuthor = document.createElement('h5');
     const bookDivPages = document.createElement('p');
+    const bookChangeStatus = document.createElement('button');
     const bookDivRead = document.createElement('p');
+    bookChangeStatus.innerText = 'Change Status';
+    bookChangeStatus.classList = ['changeReadButton'];
     bookDeleteButSpan.innerText = 'x';
     bookDeleteBut.classList = ['bookDeleteButtons'];
     bookDeleteBut.addEventListener('click', () => {
@@ -41,8 +44,9 @@ function displayBooks() {
     bookDivPages.innerText = `Pages: ${book.pages}`;
     bookDivRead.innerText = book.read;
     // eslint-disable-next-line no-nested-ternary
-    bookDivRead.id = bookDivRead.innerText === 'read' ? 'read' : bookDivRead.innerText === 'not read' ? 'notRead' : 'reading';
-    bookDiv.append(bookDeleteBut, bookDivTitle, bookDivAuthor, bookDivPages, bookDivRead);
+    bookDivRead.className = bookDivRead.innerText === 'read' ? 'read' : bookDivRead.innerText === 'not read' ? 'notRead' : 'reading';
+    // eslint-disable-next-line max-len
+    bookDiv.append(bookDeleteBut, bookDivTitle, bookDivAuthor, bookDivPages, bookChangeStatus, bookDivRead);
     bookContainer.appendChild(bookDiv);
     bookDiv.classList.add('bookDiv');
   });
@@ -191,6 +195,8 @@ function checkForm() {
   }
   return false;
 }
+
+const changeBut = Array.prototype.slice.call(document.getElementsByClassName('changeReadButton'));
 
 // function to surpress the form sending and call the necessary forms to add the new book
 function dontSendForm(event) {

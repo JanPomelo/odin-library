@@ -64,6 +64,7 @@ h1 {
 	box-shadow: 5px 5px 5px var(--header-color);
 	align-self: start;
 	display: grid;
+    grid-template-columns: 1fr 1fr;
 	gap: 10px;
 	position: relative;
 }
@@ -72,30 +73,42 @@ h5,
 p {
 	margin: 0;
 }
+.bookDiv > h3, .bookDiv > h5, .bookDiv > p:first-of-type  {
+    grid-column: 1/-1;
+}
 
 .bookDiv > h3 {
 	margin-right: 20px;
 }
-#read,
-#notRead,
-#reading {
-	align-self: end;
+.read,
+.notRead,
+.reading {
+	align-self: center;
 	justify-self: end;
 	border-radius: 1rem;
 	text-align: center;
 	width: 6rem;
 }
 
-#read {
+.read {
 	background-color: rgba(0, 255, 127, 0.7);
 }
 
-#notRead {
+.notRead {
 	background-color: rgba(240, 128, 128, 0.7);
 }
 
-#reading {
+.reading {
 	background-color: rgba(253, 253, 150, 0.7);
+}
+
+.changeReadButton {
+    border-radius: 1rem;
+    border: none;
+    background-color: var(--header-color);
+    color: var(--second-color);
+    align-self: center;
+    box-shadow: 3px 3px 2px grey;
 }
 
 #addDelete {

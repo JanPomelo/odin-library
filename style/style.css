@@ -75,6 +75,16 @@ p {
 }
 .bookDiv > h3 {
 	height: 4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+}
+
+.bookDiv > h5 {
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .bookDiv > h3,
 .bookDiv > h5,
@@ -276,7 +286,7 @@ p {
 	right: -110px;
 	left: 215px;
 	padding: 2px 8px;
-    top: 0;
+	top: 0;
 }
 
 label {

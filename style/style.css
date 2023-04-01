@@ -64,7 +64,7 @@ h1 {
 	box-shadow: 5px 5px 5px var(--header-color);
 	align-self: start;
 	display: grid;
-    grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
 	gap: 10px;
 	position: relative;
 }
@@ -73,8 +73,10 @@ h5,
 p {
 	margin: 0;
 }
-.bookDiv > h3, .bookDiv > h5, .bookDiv > p:first-of-type  {
-    grid-column: 1/-1;
+.bookDiv > h3,
+.bookDiv > h5,
+.bookDiv > p:first-of-type {
+	grid-column: 1/-1;
 }
 
 .bookDiv > h3 {
@@ -103,12 +105,12 @@ p {
 }
 
 .changeReadButton {
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--header-color);
-    color: var(--second-color);
-    align-self: center;
-    box-shadow: 3px 3px 2px grey;
+	border-radius: 1rem;
+	border: none;
+	background-color: var(--header-color);
+	color: var(--second-color);
+	align-self: center;
+	box-shadow: 3px 3px 2px grey;
 }
 
 #addDelete {
@@ -251,15 +253,15 @@ p {
 	background-color: var(--header-color);
 	padding: 3px;
 	border-radius: 1rem;
-    visibility: hidden;
-    color: var(--second-color);
-    text-align: center;
+	visibility: hidden;
+	color: var(--second-color);
+	text-align: center;
 }
 
 .infoRadioButtonSpan {
-    right: -110px;
+	right: -110px;
 	left: 215px;
-    padding: 2px 8px;
+	padding: 2px 8px;
 }
 
 label {
@@ -276,6 +278,16 @@ label {
 	align-items: center;
 	height: 1.6rem;
 	position: relative;
+	align-items: center;
+}
+
+#readImg,
+#readingImg,
+#notReadImg {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }
 
 img {

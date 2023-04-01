@@ -55,37 +55,42 @@
 					</div>
 				</div>
 				<div>
-					<label for="bookRead">
-						<img src="./img/read.png" alt="ticked Book" id="readImg" />
-						<span class="infoRadioButtonSpan" id="readSpan">Book read</span>
-					</label>
-					<input type="radio" id="bookRead" name="readCheck" value="read" />
-					<label for="bookReading">
-						<img src="./img/reading.png" alt="open Book" id="readingImg" />
-						<span class="infoRadioButtonSpan" id="readingSpan"
-							>currently reading...</span
-						>
-					</label>
-					<input
-						type="radio"
-						id="bookReading"
-						name="readCheck"
-						value="reading..."
-					/>
-
-					<label for="bookNotRead">
-						<img src="./img/notRead.png" alt="crossed Book" id="notReadImg" />
-						<span class="infoRadioButtonSpan" id="notReadSpan"
-							>Book not read yet</span
-						>
-					</label>
-					<input
-						type="radio"
-						id="bookNotRead"
-						name="readCheck"
-						value="not read"
-						checked="checked"
-					/>
+					<div id="readImg">
+						<label for="bookRead">
+							<img src="./img/read.png" alt="ticked Book" />
+							<span class="infoRadioButtonSpan" id="readSpan">Book read</span>
+						</label>
+						<input type="radio" id="bookRead" name="readCheck" value="read" />
+					</div>
+					<div id="readingImg">
+						<label for="bookReading">
+							<img src="./img/reading.png" alt="open Book" id="readingImg" />
+							<span class="infoRadioButtonSpan" id="readingSpan"
+								>currently reading...</span
+							>
+						</label>
+						<input
+							type="radio"
+							id="bookReading"
+							name="readCheck"
+							value="reading..."
+						/>
+					</div>
+					<div id="notReadImg">
+						<label for="bookNotRead">
+							<img src="./img/notRead.png" alt="crossed Book" />
+							<span class="infoRadioButtonSpan" id="notReadSpan"
+								>Book not read yet</span
+							>
+						</label>
+						<input
+							type="radio"
+							id="bookNotRead"
+							name="readCheck"
+							value="not read"
+							checked="checked"
+						/>
+					</div>
 				</div>
 				<button id="finishForm" type="submit">Add</button>
 			</form>

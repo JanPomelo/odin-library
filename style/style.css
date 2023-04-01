@@ -74,7 +74,7 @@ p {
 	margin: 0;
 }
 .bookDiv > h3 {
-    height: 4rem;
+	height: 4rem;
 }
 .bookDiv > h3,
 .bookDiv > h5,
@@ -114,6 +114,7 @@ p {
 	color: var(--second-color);
 	align-self: center;
 	box-shadow: 3px 3px 2px grey;
+	box-sizing: border-box;
 }
 
 #addDelete {
@@ -136,13 +137,23 @@ p {
 }
 
 #addBook:hover,
-#addBook:focus {
+#addBook:focus,
+.changeReadButton:hover,
+.changeReadButton:focus,
+#finishForm:hover,
+#finishForm:focus {
 	box-shadow: none;
-	filter: drop-shadow(2px 2px 2px grey);
+	filter: drop-shadow(4px 4px 4px var(--header-color));
 }
 
 #addBook:active {
 	border: #223890 3px inset;
+	box-shadow: none;
+	filter: drop-shadow(5px 5px 5px grey);
+}
+
+.changeReadButton:active,
+#finishForm:active {
 	box-shadow: none;
 	filter: drop-shadow(5px 5px 5px grey);
 }
@@ -265,6 +276,7 @@ p {
 	right: -110px;
 	left: 215px;
 	padding: 2px 8px;
+    top: 0;
 }
 
 label {
@@ -309,7 +321,7 @@ img {
 	height: 1.6rem;
 	width: 5rem;
 	border-radius: 1rem;
-	border: solid;
+	border: none;
 }
 
 input[type='text'] {

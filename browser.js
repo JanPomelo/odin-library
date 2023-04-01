@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 // initialize library array
 const myLibrary = [];
 
@@ -12,13 +13,119 @@ function Book(title, author, pages, read) {
   };
 }
 
+// title input
+const inpRightName = document.getElementById('inpRightName');
+
+// span with "wrong input" for the title input
+const infoTitle = document.getElementById('infoTitle');
+
+// info span for the title input
+const infoTitleSpan = document.getElementById('infoTitleSpan');
+
+// mouseover to show the title info span when hovering over the wrong input title span
+infoTitle.addEventListener('mouseover', () => {
+  infoTitleSpan.style.visibility = 'visible';
+});
+
+// mouseover to hide the title info span when not hovering over the wrong input title span
+infoTitle.addEventListener('mouseleave', () => {
+  infoTitleSpan.style.visibility = 'hidden';
+});
+
+// pages input
+const inpRightPages = document.getElementById('inpRightPages');
+
+// span with "wrong input" for the pages input
+const infoPages = document.getElementById('infoPages');
+
+// info span for pages input
+const infoPagesSpan = document.getElementById('infoPagesSpan');
+
+// mouseover to show the page info span when hovering over the wrong input page span
+infoPages.addEventListener('mouseover', () => {
+  infoPagesSpan.style.visibility = 'visible';
+});
+
+// mouseleave to hide the page info span when not hovering over the wrong input page span
+infoPages.addEventListener('mouseleave', () => {
+  infoPagesSpan.style.visibility = 'hidden';
+});
+
+// div for the 'read' radio button input
+const readImg = document.getElementById('readImg');
+
+// span to show information about the 'read' radio button input
+const readSpan = document.getElementById('readSpan');
+
+// mouseover to show the information about the 'read' radio button input when hovering over it
+readImg.addEventListener('mouseover', () => {
+  readSpan.style.visibility = 'visible';
+});
+
+// eslint-disable-next-line max-len
+// mouseleave to hide the information about the 'read' radio button input when not hovering over it
+readImg.addEventListener('mouseleave', () => {
+  readSpan.style.visibility = 'hidden';
+});
+
+// div for the 'reading' radio button input
+const readingImg = document.getElementById('readingImg');
+
+// span to show information about the 'reading' radio button input
+const readingSpan = document.getElementById('readingSpan');
+
+// mouseover to show the information about the 'reading' radio button input when hovering over it
+readingImg.addEventListener('mouseover', () => {
+  readingSpan.style.visibility = 'visible';
+});
+
+// eslint-disable-next-line max-len
+// mouseleave to hide the information about the 'reading' radio button input when not hovering over it
+readingImg.addEventListener('mouseleave', () => {
+  readingSpan.style.visibility = 'hidden';
+});
+
+// div the the 'not read' radio button input
+const notReadImg = document.getElementById('notReadImg');
+
+// span to show information about the 'not read' radio button input
+const notReadSpan = document.getElementById('notReadSpan');
+
+// mouseover to show the information about the 'not read' radio button input when hovering over it
+notReadImg.addEventListener('mouseover', () => {
+  notReadSpan.style.visibility = 'visible';
+});
+
+// eslint-disable-next-line max-len
+// mouseleave to hide the information about the 'not read' radio button input when not hovering over it
+notReadImg.addEventListener('mouseleave', () => {
+  notReadSpan.style.visibility = 'hidden';
+});
+
+// container in which the bookDivs are stored
+const bookContainer = document.getElementById('bookContainer');
+
+// form to add a book
+const form = document.getElementById('addBookForm');
+
+// button to open the form
+const addButton = document.getElementById('addBook');
+
+// button to submit the form
+const finishForm = document.getElementById('finishForm');
+
+// div to store the button which opens the form
+const addDelete = document.getElementById('addDelete');
+
+// button to close the form
+const closeForm = document.getElementById('closeForm');
+
 // function to add a book to the library
 function addBookToLibrary(book) {
   myLibrary.push(book);
 }
-// container in which the bookDivs are stored
-const bookContainer = document.getElementById('bookContainer');
 
+// function to change the read status of a book
 function changeReadStatus(button, readStatusP) {
   button.addEventListener('click', () => {
     switch (readStatusP.innerText) {
@@ -40,9 +147,48 @@ function changeReadStatus(button, readStatusP) {
   });
 }
 
+// function to adjust the 'Change Read Status' Button
+function adjustChangeButton(button) {
+  button.innerText = 'Change Status';
+  button.classList = ['changeReadButton'];
+}
+
+// function to adjust the 'delete Book from Library' Button
+function adjustDeleteButton(button, span) {
+  button.innerText = 'x';
+  button.classList = ['bookDeleteButtons'];
+  button.appendChild(span);
+}
+
+// function to add an OnClickEventListener to the DeleteButton
+function addOnClickDeleteBut(button, bookDiv, object, index) {
+  button.addEventListener('click', () => {
+    bookDiv.remove();
+    object.splice(index, 1);
+  });
+}
+
+// function to adjust the Class of the reading status p element
+function adjustBookReadClass(bookRead) {
+  switch (bookRead.innerText) {
+    case 'read':
+      bookRead.classList = ['read'];
+      break;
+    case 'not read':
+      bookRead.classList = ['notRead'];
+      break;
+    case 'reading...':
+      bookRead.classList = ['reading'];
+      break;
+    default:
+      break;
+  }
+}
+
 // function to display the books in the book Container
 function displayBooks() {
   myLibrary.forEach((book, index, object) => {
+    // create the elements
     const bookDiv = document.createElement('div');
     const bookDeleteBut = document.createElement('button');
     const bookDeleteButSpan = document.createElement('span');
@@ -51,37 +197,26 @@ function displayBooks() {
     const bookDivPages = document.createElement('p');
     const bookChangeStatus = document.createElement('button');
     const bookDivRead = document.createElement('p');
-    bookChangeStatus.innerText = 'Change Status';
-    bookChangeStatus.classList = ['changeReadButton'];
-    bookDeleteButSpan.innerText = 'x';
-    bookDeleteBut.classList = ['bookDeleteButtons'];
+
+    adjustChangeButton(bookChangeStatus);
+    adjustDeleteButton(bookDeleteBut, bookDeleteButSpan);
     changeReadStatus(bookChangeStatus, bookDivRead);
-    bookDeleteBut.addEventListener('click', () => {
-      bookDiv.remove();
-      object.splice(index, 1);
-    });
-    bookDeleteBut.appendChild(bookDeleteButSpan);
+    addOnClickDeleteBut(bookDeleteBut, bookDiv, object, index);
+
+    // write the book information into the elements
     bookDivTitle.innerText = book.title;
     bookDivAuthor.innerText = `by ${book.author}`;
     bookDivPages.innerText = `Pages: ${book.pages}`;
     bookDivRead.innerText = book.read;
-    // eslint-disable-next-line no-nested-ternary
-    bookDivRead.classList = [bookDivRead.innerText === 'read' ? 'read' : bookDivRead.innerText === 'not read' ? 'notRead' : 'reading'];
-    bookDivRead.classList.add('readStatus');
+
+    adjustBookReadClass(bookDivRead);
+    // add the divs together
     // eslint-disable-next-line max-len
     bookDiv.append(bookDeleteBut, bookDivTitle, bookDivAuthor, bookDivPages, bookChangeStatus, bookDivRead);
     bookContainer.appendChild(bookDiv);
     bookDiv.classList.add('bookDiv');
   });
 }
-// form to add a book
-const form = document.getElementById('addBookForm');
-// button to open the form
-const addButton = document.getElementById('addBook');
-// button to submit the form
-const finishForm = document.getElementById('finishForm');
-// div to store the button which opens the form
-const addDelete = document.getElementById('addDelete');
 
 // function to blurr everything except the form
 function makeAllBlurred() {
@@ -135,66 +270,6 @@ function checkAuthor() {
   }
 }
 
-const inpRightName = document.getElementById('inpRightName');
-
-const inpRightPages = document.getElementById('inpRightPages');
-
-const infoPages = document.getElementById('infoPages');
-
-const infoPagesSpan = document.getElementById('infoPagesSpan');
-
-infoPages.addEventListener('mouseover', () => {
-  infoPagesSpan.style.visibility = 'visible';
-});
-
-infoPages.addEventListener('mouseleave', () => {
-  infoPagesSpan.style.visibility = 'hidden';
-});
-
-const readImg = document.getElementById('readImg');
-const readSpan = document.getElementById('readSpan');
-
-const readingImg = document.getElementById('readingImg');
-const readingSpan = document.getElementById('readingSpan');
-
-const notReadImg = document.getElementById('notReadImg');
-const notReadSpan = document.getElementById('notReadSpan');
-
-readImg.addEventListener('mouseover', () => {
-  readSpan.style.visibility = 'visible';
-});
-
-readImg.addEventListener('mouseleave', () => {
-  readSpan.style.visibility = 'hidden';
-});
-
-notReadImg.addEventListener('mouseover', () => {
-  notReadSpan.style.visibility = 'visible';
-});
-
-notReadImg.addEventListener('mouseleave', () => {
-  notReadSpan.style.visibility = 'hidden';
-});
-
-readingImg.addEventListener('mouseover', () => {
-  readingSpan.style.visibility = 'visible';
-});
-
-readingImg.addEventListener('mouseleave', () => {
-  readingSpan.style.visibility = 'hidden';
-});
-
-const infoTitle = document.getElementById('infoTitle');
-
-const infoTitleSpan = document.getElementById('infoTitleSpan');
-
-infoTitle.addEventListener('mouseover', () => {
-  infoTitleSpan.style.visibility = 'visible';
-});
-
-infoTitle.addEventListener('mouseleave', () => {
-  infoTitleSpan.style.visibility = 'hidden';
-});
 // function to check the form before submitting
 function checkForm() {
   let allRight = true;
@@ -246,6 +321,7 @@ function dontSendForm(event) {
   event.preventDefault();
   return false;
 }
+
 // function to just close the form and don't safe anything
 function closeFormFunction() {
   makeAllUnBlurred();
@@ -259,10 +335,13 @@ function closeFormFunction() {
   }
 }
 
+// add the OnClickEventListener to make the Form Visible
 addButton.addEventListener('click', makeFormVisible);
+
+// add the OnClickEventListener to close the Form and save the necessary information
 finishForm.addEventListener('click', dontSendForm, false);
 
-const closeForm = document.getElementById('closeForm');
+// add the OnClickEventListener to close the Form without saving anything
 closeForm.addEventListener('click', closeFormFunction);
 
 const book1 = new Book('Harry Potter and the Philosophers Stone', 'J.K. Rowling', 248, 'read');

@@ -126,18 +126,21 @@ function addBookToLibrary(book) {
 }
 
 // function to change the read status of a book
-function changeReadStatus(button, readStatusP) {
+function changeReadStatus(button, readStatusP, book) {
   button.addEventListener('click', () => {
-    switch (readStatusP.innerText) {
+    switch (book.read) {
       case 'read':
+        book.read = 'not read';
         readStatusP.classList = ['notRead'];
         readStatusP.innerText = 'not read';
         break;
       case 'not read':
+        book.read = 'reading';
         readStatusP.classList = ['reading'];
-        readStatusP.innerText = 'reading...';
+        readStatusP.innerText = 'reading';
         break;
-      case 'reading...':
+      case 'reading':
+        book.read = 'read';
         readStatusP.classList = ['read'];
         readStatusP.innerText = 'read';
         break;
@@ -177,7 +180,7 @@ function adjustBookReadClass(bookRead) {
     case 'not read':
       bookRead.classList = ['notRead'];
       break;
-    case 'reading...':
+    case 'reading':
       bookRead.classList = ['reading'];
       break;
     default:
@@ -200,7 +203,7 @@ function displayBooks() {
 
     adjustChangeButton(bookChangeStatus);
     adjustDeleteButton(bookDeleteBut, bookDeleteButSpan);
-    changeReadStatus(bookChangeStatus, bookDivRead);
+    changeReadStatus(bookChangeStatus, bookDivRead, book);
     addOnClickDeleteBut(bookDeleteBut, bookDiv, object, index);
 
     // write the book information into the elements

@@ -155,7 +155,7 @@ function adjustChangeButton(button) {
 
 // function to adjust the 'delete Book from Library' Button
 function adjustDeleteButton(button, span) {
-  button.innerText = 'x';
+  span.innerText = 'x';
   button.classList = ['bookDeleteButtons'];
   button.appendChild(span);
 }

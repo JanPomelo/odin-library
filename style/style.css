@@ -68,14 +68,17 @@ h1 {
 	gap: 10px;
 	position: relative;
 }
+
 h3,
 h5,
 p {
 	margin: 0;
 }
+
 .bookDiv > h3 {
 	height: 4rem;
 	overflow: hidden;
+	margin-right: 20px;
 	text-overflow: ellipsis;
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
@@ -86,15 +89,13 @@ p {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
 .bookDiv > h3,
 .bookDiv > h5,
 .bookDiv > p:first-of-type {
 	grid-column: 1/-1;
 }
 
-.bookDiv > h3 {
-	margin-right: 20px;
-}
 .read,
 .notRead,
 .reading {
@@ -236,6 +237,7 @@ p {
 	gap: 0px;
 	align-items: center;
 }
+
 .inpRight,
 .inpWrong {
 	font-size: 0.8rem;

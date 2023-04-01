@@ -205,8 +205,8 @@ p {
 #closeForm,
 .bookDeleteButtons {
 	position: absolute;
-	right: 5px;
-	top: 3px;
+	right: 8px;
+	top: 5px;
 	background-color: rgba(240, 128, 128, 0.7);
 	border: none;
 	border-radius: 50%;
@@ -215,6 +215,11 @@ p {
 	box-shadow: 2px 2px 1px grey;
 	color: black;
 	padding: 0px;
+}
+
+#closeForm {
+	right: 5px;
+	top: 3px;
 }
 
 #closeForm:hover,

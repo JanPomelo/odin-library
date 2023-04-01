@@ -73,6 +73,9 @@ h5,
 p {
 	margin: 0;
 }
+.bookDiv > h3 {
+    height: 4rem;
+}
 .bookDiv > h3,
 .bookDiv > h5,
 .bookDiv > p:first-of-type {

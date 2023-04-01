@@ -19,6 +19,27 @@ function addBookToLibrary(book) {
 // container in which the bookDivs are stored
 const bookContainer = document.getElementById('bookContainer');
 
+function changeReadStatus(button, readStatusP) {
+  button.addEventListener('click', () => {
+    switch (readStatusP.innerText) {
+      case 'read':
+        readStatusP.classList = ['notRead'];
+        readStatusP.innerText = 'not read';
+        break;
+      case 'not read':
+        readStatusP.classList = ['reading'];
+        readStatusP.innerText = 'reading...';
+        break;
+      case 'reading...':
+        readStatusP.classList = ['read'];
+        readStatusP.innerText = 'read';
+        break;
+      default:
+        break;
+    }
+  });
+}
+
 // function to display the books in the book Container
 function displayBooks() {
   myLibrary.forEach((book, index, object) => {
@@ -34,6 +55,7 @@ function displayBooks() {
     bookChangeStatus.classList = ['changeReadButton'];
     bookDeleteButSpan.innerText = 'x';
     bookDeleteBut.classList = ['bookDeleteButtons'];
+    changeReadStatus(bookChangeStatus, bookDivRead);
     bookDeleteBut.addEventListener('click', () => {
       bookDiv.remove();
       object.splice(index, 1);
@@ -44,7 +66,8 @@ function displayBooks() {
     bookDivPages.innerText = `Pages: ${book.pages}`;
     bookDivRead.innerText = book.read;
     // eslint-disable-next-line no-nested-ternary
-    bookDivRead.className = bookDivRead.innerText === 'read' ? 'read' : bookDivRead.innerText === 'not read' ? 'notRead' : 'reading';
+    bookDivRead.classList = [bookDivRead.innerText === 'read' ? 'read' : bookDivRead.innerText === 'not read' ? 'notRead' : 'reading'];
+    bookDivRead.classList.add('readStatus');
     // eslint-disable-next-line max-len
     bookDiv.append(bookDeleteBut, bookDivTitle, bookDivAuthor, bookDivPages, bookChangeStatus, bookDivRead);
     bookContainer.appendChild(bookDiv);
@@ -195,8 +218,6 @@ function checkForm() {
   }
   return false;
 }
-
-const changeBut = Array.prototype.slice.call(document.getElementsByClassName('changeReadButton'));
 
 // function to surpress the form sending and call the necessary forms to add the new book
 function dontSendForm(event) {

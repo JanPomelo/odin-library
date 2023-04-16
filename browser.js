@@ -3,7 +3,20 @@
 const myLibrary = [];
 
 // initialize book object
-function Book(title, author, pages, read) {
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  info() {
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+  }
+}
+
+/* function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -12,6 +25,7 @@ function Book(title, author, pages, read) {
     return `${title} by ${author}, ${pages} pages, ${read}`;
   };
 }
+*/
 
 // title input
 const inpRightName = document.getElementById('inpRightName');
@@ -347,7 +361,12 @@ finishForm.addEventListener('click', dontSendForm, false);
 // add the OnClickEventListener to close the Form without saving anything
 closeForm.addEventListener('click', closeFormFunction);
 
-const book1 = new Book('Harry Potter and the Philosophers Stone', 'J.K. Rowling', 248, 'read');
+const book1 = new Book(
+  'Harry Potter and the Philosophers Stone',
+  'J.K. Rowling',
+  248,
+  'read',
+);
 
 const book2 = new Book(
   'Harry Potter and the Chamber of Secrets',

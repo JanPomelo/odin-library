@@ -24,5 +24,5 @@
 	"prettier.tabWidth": 2,
 	"prettier.arrowParens": "avoid",
 	"prettier.singleQuote": true,
-	"liveServer.settings.port": 5502
+	"liveServer.settings.port": 5503
 }
